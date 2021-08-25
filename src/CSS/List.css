@@ -1,0 +1,95 @@
+.list-container
+{
+    margin : 0px;
+
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-container
+{
+    width: 70vw;    
+    height: auto;
+    min-height: 50px;
+    margin : 20px;
+    padding: 0px 15px;
+    
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    border : 2px solid black;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    cursor: grab;
+}
+
+.item-container .item-index
+{
+    font-size: 25px;
+    font-weight: 200;
+    font-family: 'Bahnschrift';
+    margin: 0px 50px 0px 0px;
+}
+
+.item-container .item-name
+{
+    width: 70%;
+    height: 100%;
+    font-size: 25px;
+    font-weight: 100;
+    font-family: 'Bahnschrift';
+}
+
+.item-container .item-name input
+{
+    width: 50%;
+    height: auto;
+    font-size: 22px;
+    font-family: 'Bahnschrift';
+}
+
+.item-container .rating-container
+{
+    margin : 0px 0px 0px auto;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    font-family: 'Bahnschrift';
+    cursor: text;
+}
+
+.item-container .rating-container .rating
+{
+    font-size: 25px;
+    font-weight: 100;
+    color : black;
+}
+
+.item-container .rating-container .rating-input
+{
+    width: 40px;
+    height: 40px;
+    
+    font-size: 22px;
+    font-weight: 100;
+    font-family: 'Bahnschrift';
+    background-color: rgb(77, 190, 77);
+    border : none;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.change-rating-container
+{
+    display : 'flex';
+    flex-direction: column;
+}
+

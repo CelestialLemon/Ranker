@@ -1,0 +1,82 @@
+.page-container-create-list
+{
+    height: auto;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+ .button-group-create-list
+{
+    margin : 20px 10% 20px auto;
+
+    display: flex;
+    justify-content: center;
+}
+
+ .button-group-create-list button
+{
+    width: auto;
+    height: auto;
+    padding : 10px 20px;
+    margin : 0px 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    font-family: 'Bahnschrift';
+    background : #3FC5EB;
+    color: black;
+    border : none;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: box-shadow 100ms ease;
+}
+
+
+.page-container-create-list .listname-input
+{
+    width: 80%;
+    height: 50px;
+    margin : 20px;
+    padding : 0 10px;
+
+    font-size: 25px;
+    font-family: 'Bahnschrift';
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
+}
+
+.page-container-create-list input::placeholder
+{
+    color : rgb(168, 168, 168);
+}
+
+
+.page-container-create-list .add-item-button
+{
+    height: auto;
+    width: auto;
+    padding: 10px 20px;
+    margin: 10px;
+
+    font-size: 25px;
+    font-family: 'Bahnschrift';
+    background: #5E139E;
+    color : white;
+    border : none;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+}
+
+
+
+
+

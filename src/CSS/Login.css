@@ -1,0 +1,192 @@
+.login-page-container
+{
+    width: 100vw;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background : linear-gradient(to right, #5E139E, #3FC5EB);
+}
+
+.login-card-container
+{
+    width: 400px;
+    height: 600px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-card-container .header
+{
+    font-size: 40px;
+    font-family: 'Bahnschrift';
+}
+
+.login-card-container .button-group
+{
+    display: flex;
+    align-items: center;
+}
+
+.login-card-container .button-group .signup-button
+{
+    width: 150px;
+    height: 50px;
+    margin : 5px;
+
+    font-size: 25px;
+    font-weight: 100;
+    font-family: 'Bahnschrift';
+    border : none;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
+    cursor : pointer;
+
+
+}
+
+.login-card-container .button-group .login-button
+{
+    width: 150px;
+    height: 50px;
+    margin : 10px;
+
+    font-size: 25px;
+    font-weight: 100;
+    font-family: 'Bahnschrift';
+    border : none;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
+    cursor : pointer;
+
+}
+
+.login-card-container .sign-up-form
+{
+    width : 100%;
+    margin : 20px 0px 0px 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sign-up-form .text-input-field
+{
+    width: 75%;
+    height: 50px;
+    margin: 20px 0px 0px 0px;
+    padding : 0px 10px;
+
+    border: 1px solid grey;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+
+    font-size: 20px;
+    font-family: 'Bahnschrift';
+}
+
+.sign-up-form .remember-on-device
+{
+    width: 75%;
+    margin: 10px auto 10px 0%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    transform: scale(1.5);
+    background-image: red;
+}
+
+.sign-up-form .remember-on-device label
+{
+    font-size: 13px;
+}
+
+.sign-up-form input::placeholder
+{
+    color : rgb(168, 168, 168);
+}
+
+.sign-up-form .forgot-password
+{
+    margin-right : auto;
+    margin-left: 10%;
+    
+    color : #5E139E;
+    font-family: 'Bahnschrift';
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 100;
+}
+
+.sign-up-form .password-visible-icon
+{
+    margin : -35px 15% 35px auto;
+    z-index: 10;
+
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+
+.sign-up-form button
+{
+    width : 80%;
+    height: 50px;
+    margin-top : 20px;
+    padding : 0px 10px;
+
+    border : none;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
+    cursor : pointer;
+
+    font-size: 25px;
+    font-family: 'Bahnschrift';
+    color : white;
+    background : linear-gradient(to right, #5E139E, #3FC5EB);
+}
+
+.sign-up-form .error-message
+{
+    width : 80%;
+    height: 40px;
+    margin : 20px 0px 0px 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color : rgb(248, 98, 11);
+    color : white;
+    font-size: 20px;
+    font-family: 'Bahnschrift';
+    border-radius: 5px;
+}
+
+.sign-up-form .success-message
+{
+    width : 80%;
+    height: 40px;
+    margin : 20px 0px 0px 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color : rgb(21, 202, 81);
+    color : white;
+    font-size: 20px;
+    font-family: 'Bahnschrift';
+    border-radius: 5px;
+}

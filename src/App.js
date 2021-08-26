@@ -8,6 +8,7 @@ import CreateList from './pages/CreateList';
 import Temp from './pages/Temp';
 import DeleteListModal from './components/Home/DeleteListModal';
 import EditList from './pages/EditList';
+import ViewList from './pages/ViewList';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route exact path='/temp' component={Temp}></Route>
         <Route exact path='/list/create' component={CreateList}></Route>
         <Route exact path='/list/edit/:id' component={EditList}></Route>
+        <Route exact path='/list/view/:id' component={ViewList}></Route>
       </Switch>
     </Router>
   );

@@ -5,12 +5,23 @@ import { useHistory } from 'react-router'
 import { motion } from 'framer-motion'
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
 
-import { AiFillSave, AiOutlineConsoleSql } from 'react-icons/ai'
 import ButtonGroupCreateList from '../components/CreateList/ButtonGroupCreateList'
 import '../CSS/CreateList.css'
-import ListItem from '../components/ListItem'
-import List from '../components/List'
 import ListItemInput from '../components/CreateList/ListItemInput'
+import ImportItemsModal from '../components/CreateList/ImportItemsModal'
+import styled from 'styled-components'
+
+const DimBackground = styled.div`
+    position : absolute;
+    top : 0%;
+    left : 0%;
+
+    height : 100%;
+    width : 100%;
+    background : rgba(0, 0, 0, 0.3);
+    z-index : 2;
+`
+
 const CreateList = () => {
 
     let history = useHistory();
@@ -18,6 +29,9 @@ const CreateList = () => {
     const [items, setItems] = useState([]);
     const [updateState, setUpdateState] = useState(0);
     const [listName, setListName] = useState('');
+    const [canShare, setCanShare] = useState(false);
+    const [showImportModal, setShowImportModal] = useState(false);
+
 
     const addItemToList = () =>
     {
@@ -28,6 +42,14 @@ const CreateList = () => {
             'rating' : 0.0
         })
 
+        setItems(temp);
+        setUpdateState(updateState + 1);
+    }
+
+    const removeLastItemFromList = () =>
+    {
+        const temp = items;
+        temp.pop();
         setItems(temp);
         setUpdateState(updateState + 1);
     }
@@ -86,6 +108,7 @@ const CreateList = () => {
             const res = await axios.post('https://ranker-22-api.herokuapp.com/lists/create',
             {
                 'listName' : listName,
+                'canShare' : canShare,
                 'items' : items
             },
             {
@@ -104,11 +127,29 @@ const CreateList = () => {
         }
     }
 
+    const onShare = (canShareInput) =>
+    {
+        setCanShare(canShareInput);
+    }
+
+    const onImport = () =>
+    {
+        setShowImportModal(!showImportModal);
+    }
+
+    const onImportSuccess = (importedItems) =>
+    {
+        const temp = items.concat(importedItems);
+        setItems(temp);
+    }
 
     return (
-        <div className='page-container-create-list'>
+        <div className='page-container-create-list' style={{}}>
             <ButtonGroupCreateList
-            onSave={onSave}></ButtonGroupCreateList>
+            onSave={onSave}
+            onImport={onImport}
+            onShare={onShare}
+            canShare={false}></ButtonGroupCreateList>
             
             <input className='listname-input' placeholder='Enter a name for the list'
             onChange={e => setListName(e.target.value)}></input>
@@ -145,10 +186,24 @@ const CreateList = () => {
                     </Droppable>
             </DragDropContext>
         
-            <motion.button 
-            className='add-item-button'
-            whileTap={{scale : 0.95}}
-            onClick={addItemToList}>+ Add Item</motion.button>
+            <div style={{display : 'flex'}}>
+                <motion.button 
+                className='add-item-button'
+                whileTap={{scale : 0.95}}
+                onClick={addItemToList}>+ Add Item</motion.button>
+
+                <motion.button
+                className='remove-last-item-button'
+                whileTap={{scale : 0.95}}
+                onClick={removeLastItemFromList}>
+                    - Remove Last Item
+                </motion.button>
+
+            </div>
+            {showImportModal ? <DimBackground></DimBackground> : <></>}
+            {showImportModal ? <ImportItemsModal
+                                onModalClose={() => setShowImportModal(false)}
+                                onImportSuccess={onImportSuccess}></ImportItemsModal> : <></>}
         </div>
     )
 }

@@ -57,6 +57,11 @@ const Card = ({title, goldItem, silverItem, bronzeItem, _id}) => {
     {
         history.push('/list/edit/' + _id);
     }
+
+    const onClickShare = () =>
+    {
+        navigator.clipboard.writeText('https://ranker-22.herokuapp.com/list/view/' + _id);
+    }
     
     if(title.length > 22)
     title = title.substring(0, 20) + '...';
@@ -92,6 +97,7 @@ const Card = ({title, goldItem, silverItem, bronzeItem, _id}) => {
 
                     <RiShareForwardLine 
                     className='icon' 
+                    onClick={onClickShare}
                     style={{backgroundColor : randomBgColor, color : fgColor}}>
                     </RiShareForwardLine>
                     

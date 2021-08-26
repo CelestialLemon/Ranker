@@ -6,9 +6,9 @@ import { BsLock, BsUnlock } from 'react-icons/bs'
 import { AiOutlineSave } from 'react-icons/ai'
 import { CgImport } from 'react-icons/cg'
 import '../../CSS/CreateList.css'
-const ButtonGroupCreateList = ({onSave, onImport}) => {
+const ButtonGroupCreateList = ({onSave, onImport, onShare, canShare}) => {
 
-    const [sharingEnabled, setSharingEnabled] = useState(false);
+    const [sharingEnabled, setSharingEnabled] = useState(canShare);
     const [sharingButtonCSS, setSharingButtonCSS] = useState({});
 
     const ToogleSharing = () =>
@@ -21,8 +21,15 @@ const ButtonGroupCreateList = ({onSave, onImport}) => {
         onSave();
     }
 
+    const onClickImportItems = () =>
+    {
+        onImport();
+    }
+
+
     useEffect(() =>
     {
+        onShare(sharingEnabled);
         if(sharingEnabled)
         {
             setSharingButtonCSS({
@@ -40,7 +47,8 @@ const ButtonGroupCreateList = ({onSave, onImport}) => {
     }, [sharingEnabled])
     return (
         <div className='button-group-create-list'>
-            <motion.button whileTap={{scale : 0.95}}>
+            <motion.button whileTap={{scale : 0.95}}
+            onClick={onClickImportItems}>
                 <CgImport size={25} style={{marginBottom : '5px', marginRight : '10px'}}></CgImport>
                 Import Items
             </motion.button>

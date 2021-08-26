@@ -65,7 +65,7 @@ const ListItemInput = ({itemName, index, rating, onDataChange}) => {
 
 
     return (
-        <div className='item-container' style={{padding : '10px 15px'}}>
+        <div className='item-container' style={{padding : '15px 15px'}}>
             <div className='item-index'>{index + 1}</div>
             <div className='item-name' onClick={onClickName} ref={nameRef}>
                 {

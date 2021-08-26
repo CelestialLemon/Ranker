@@ -76,6 +76,23 @@
     cursor: pointer;
 }
 
+.page-container-create-list .remove-last-item-button
+{
+    height: auto;
+    width: auto;
+    padding: 10px 20px;
+    margin: 10px;
+
+    font-size: 25px;
+    font-family: 'Bahnschrift';
+    background: red;
+    color : white;
+    border : none;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+}
+
 
 
 

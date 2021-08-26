@@ -79,7 +79,7 @@ const DeleteListModal = ({showModal, closeModal, _id, deleteCard}) => {
     const Modal = (
         <ModalContainer ref={ref}>
             <ModalTitle>Confirm Deltete?</ModalTitle>
-            <ModalDescription>Are you sure you want to delete list someList?</ModalDescription>
+            <ModalDescription>Are you sure you want to delete this list?</ModalDescription>
             <DeleteButton 
             onClick={onDeleteClick}
             whileTap={{
